@@ -1,0 +1,23 @@
+.counter{
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+  height: 43px;
+}
+
+.counter .digit{
+  font-size: 28px;
+  text-align: center;
+  line-height: 45px;
+  float: left;
+  display: block;
+  height: 43px;
+  width: 32px;
+  margin-right: 1px;
+  background: #000;
+  color: #FFF;
+}

@@ -1,0 +1,259 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+	<link rel="stylesheet" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css" type="text/css">
+	<link rel="stylesheet" href="counter/counter.css" />
+	
+	<style>
+	/* RESET */
+	html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a,
+	font, img, dl, dt, dd, ol, ul, li, legend, table, tbody, tr, th, td 
+	{margin:0px;padding:0px;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;list-style:none;}
+	a img {border: none;}
+	ol li {list-style: decimal outside;}
+	fieldset {border:0;padding:0;}
+
+	body { font-family: sans-serif; font-size: 1em; }
+
+	div#container { width: 780px; margin: 0 auto; padding: 1em 0;  }
+	p { margin: 1em 0; max-width: 700px; }
+	h1 + p { margin-top: 0; }
+
+	h1, h2 { font-family: Georgia, Times, serif; }
+	h1 { font-size: 2em; margin-bottom: .75em; }
+	h2 { font-size: 1.5em; margin: 2.5em 0 .5em; border-bottom: 1px solid #999; padding-bottom: 5px; }
+	h3 { font-weight: bold; }
+
+	ul li { list-style: disc; margin-left: 1em; }
+	ol li { margin-left: 1.25em; }
+
+	div.side-by-side { width: 100%; margin-bottom: 1em; }
+	div.side-by-side > div { float: left; width: 50%; }
+	div.side-by-side > div > em { margin-bottom: 10px; display: block; }
+
+	a { color: #666; text-decoration: underline; }
+
+	.faqs em { display: block; }
+	
+	pre.prettyprint, code.prettyprint { 
+		margin-right: 10px;
+		border: none;
+		font-family: Monaco, monospace;
+		font-size: 12px;
+		padding: 3px 4px ;
+		border-radius: 3px;
+		border: 1px solid #CCC;
+	}
+	pre.prettyprint{
+		padding: 5px 6px ;
+	}
+	
+	.lit { color: darkred }
+	.com { color: grey }
+	code .keyword { font-weight: bold }
+	code .string, code .regexp { color: green }
+	code .class, code .special { color: blue }
+	
+	
+	.clearfix:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		clear: both;
+		overflow: hidden;
+		visibility: hidden;
+	}
+
+	footer {
+		margin-top: 2em;
+		border-top: 1px solid #666;
+		padding-top: 5px;
+	}
+	
+	
+	/*
+	Custom Display
+	*/
+	
+	.counter.custom .digit{
+		border-radius: 3px;
+		background: #990000;
+	}
+
+	.counter.custom .overlay{
+		height: 43px;
+		width: 263px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: -webkit-gradient(linear, left bottom, left top,
+			color-stop(0, rgba(255,255,255,0)),
+			color-stop(0.50, rgba(255,255,255,.4)),
+			color-stop(1, rgba(255,255,255,0))
+		);
+	}
+	
+	
+	
+	
+	</style>
+	</head>
+	<body>
+	<div id="container">
+	<h1>Counter</h1>
+	<p>Counter is a JavaScript plugin to easily create counters without images. For more information (including usage, explanation and faqs), check out <a href="http://github.com/FetchNL/counter/">the project on GitHub</a>.</p>
+
+	<h2>Autostarting Counters</h2>
+	<div class=" clearfix">
+		<p>Counters can be any size. Options can be set through data-attributes or by an options object passed to the constructor.</p>
+		<div>
+			<div class="counter" id="counter-1" data-digits="20" data-duration="2000000" data-animate-to="1000000"></div>
+			<p><strong>With data-attributes:</strong></p>
+			<pre class="prettyprint">
+&lt;div class="counter" data-digits="20" data-duration="2000000" data-animate-to="1000000"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$('.counter').counter();
+&lt;/script&gt;
+</pre>
+			<p><strong>With object in constructor:</strong></p>
+			<pre class="prettyprint">
+&lt;div class="counter"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$('.counter').counter({
+    digits: 20,
+    duration: 2000000
+}).counter('animateTo', 1000000);
+&lt;/script&gt;
+</pre>
+		</div>
+	</div>
+
+	<h2>Manual starting Counters</h2>
+	<div class="side-by-side clearfix">
+		<p>Counters can be initiated with a number and target number.</p>
+		<div>
+			<div class="counter" id="counter-3" data-number="1000" data-duration="10000" ></div>
+			<p>Click to update the Counter to  <a href="javascript:;" data-target="counter-3" data-animate-to="0">0</a> or <a href="javascript:;" data-target="counter-3" data-animate-to="2000">2000</a></p>
+			<p><strong>Code:</strong></p>
+			<pre class="prettyprint">
+$('a').on('click', function(){
+    $('.counter').counter('animateTo', 0);
+});
+</pre>
+		</div>
+		<div>
+			<div class="counter" id="counter-4" data-number="0" data-duration="1000" ></div>
+			<p>Click to <a href="javascript:;" data-target="counter-4" data-animate-to="++1234">add 1234 to</a> or <a href="javascript:;" data-target="counter-4" data-animate-to="--1234">substract 1234 from</a> the counter</a></p>
+			
+			<p><strong>Code:</strong></p>
+			<pre class="prettyprint">
+$('a').on('click', function(){
+    $('.counter').counter('animateTo', '+1234');
+});
+</pre>
+		</div>
+	</div>
+
+	<h2>Counter with callback</h2>
+	<div class="clearfix">
+		<p>Counters can be initiated with a number and target number.</p>
+		<div>
+			<div class="counter counter-revert" data-number="1000" data-duration="4000" data-animate-to="0" ></div>
+			<p><strong>Code:</strong></p>
+			<pre class="prettyprint">
+$('.counter').counter().on('counter:finished', function(event, data){
+    var _this = this;
+    setTimeout(function(){
+        // Pause for 1 second and then revert to previous value
+        $(_this).counter('animateTo', data.old_value);
+    }, 1000);
+});
+</pre>
+		</div>
+		
+	</div>
+	<h2>Counter with custom display</h2>
+	<div class="clearfix">
+		<div>
+			<p>Customizing the looks of Counter is very easy, just use CSS.</p>
+			<div class="counter custom" ><div class="overlay"></div></div>
+			<p><strong>Code:</strong></p>
+			<pre class="prettyprint">
+&lt;div class="counter custom"&gt;
+   &lt;div class="overlay"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+.counter .digit{
+    border-radius: 3px;
+    background: #990000;
+}
+
+.counter .overlay{
+    height: 43px;
+    width: 263px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: -webkit-gradient(linear, left bottom, left top,
+        color-stop( 0, rgba(255, 255, 255, 0)),
+        color-stop( .5, rgba(255, 255, 255, .4)),
+        color-stop( 1, rgba(255, 255, 255, 0))
+    );
+}
+&lt;/style&gt;
+</pre>
+		</div>
+		
+	</div>
+
+	<h2>Change / Update Events</h2>
+	<div class="side-by-side clearfix">
+		<ul>
+			<li>
+				<h3>Counter Finished</h3>
+				<p><code class="prettyprint">$('.counter').counter().on('counter:finished', function(event, data){ &hellip; } );</code></p>
+			</li>
+			<li>
+				<h3>Counter Stopped</h3>
+				<p><code class="prettyprint">$('.counter').counter().on('counter:stopped', function(event, data){ &hellip; } );</code></p>
+			</li>
+			
+		</ul>
+	</div>
+
+	<h2>Setup (for jQuery)</h2>
+	<p>Using Counter is easy as can be.</p>
+	<ol>
+		<li>Download the plugin and copy the counter files to your app.</li>
+		<li>Activate the plugin on any div of your choice: <code class="prettyprint">$('.counter').counter()</code></li>
+		<li>Modify counter.css to change the look of your counter.</li>
+	</ol>
+
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript"></script>
+	<script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js" type="text/javascript" ></script>
+	<script src="counter/counter.jquery.js" type="text/javascript"></script>
+	<script>
+	$(function(){
+		$('[data-target]').on('click', function(event){
+			event.preventDefault();
+			var data = $(this).data();
+			data.animateTo = typeof data.animateTo == 'string' ? data.animateTo.replace('++', '+').replace('--', '-') : data.animateTo;
+			$('#' + data.target).counter('animateTo', data.animateTo);
+		});
+		$('.counter').on('counter:stopped', function(event, data){console.log(data)}).counter();
+		
+		$('.counter-revert').on('counter:finished', function(event, data){
+			var _this = this;
+			setTimeout(function(){
+				$(_this).counter('animateTo', data.old_value);
+			}, 1000);
+		});
+		
+		prettyPrint();
+	});
+	</script>
+</body>
+</html>
