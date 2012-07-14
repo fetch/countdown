@@ -5,9 +5,9 @@ $.fn.extend
       if counter
         counter[options].apply(counter, args) if counter[options]
       else
-        $(this).data 'counter', new Counter( this, options )
+        $(this).data 'counter', new Countdown( this, options )
 
-class Counter
+class Countdown
   
   @defaults = 
     placeholder: '-'
@@ -20,7 +20,7 @@ class Counter
   constructor: (elem, options) ->
     @jq_elem = $ elem
     @value = 0
-    @options = $.extend({}, Counter.defaults, @jq_elem.data(), options)
+    @options = $.extend({}, Countdown.defaults, @jq_elem.data(), options)
     this.buildHtml()
     this.parseOptions()
     

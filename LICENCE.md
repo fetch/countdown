@@ -1,4 +1,4 @@
-# Counter, a Count Down plugin for jQuery and Protoype
+# Countdown, a Counter and Countdown plugin for jQuery
 ## by Koen Punt for [Fetch!](http://www.fetch.com)
 
 Available for use under the [MIT License](http://en.wikipedia.org/wiki/MIT_License)
