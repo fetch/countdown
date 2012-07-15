@@ -1,7 +1,7 @@
 {
   "author": "Koen.",
   "name": "countdown",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Countdown is a JavaScript plugin to easily create countdowns and counters. It is currently only available for jQuery.",
   "repository": {
     "type": "git",

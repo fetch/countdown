@@ -1,7 +1,7 @@
 // Countdown, a Counter and Countdown plugin for jQuery
 // by Koen Punt for Fetch!, http://www.fetch.nl
 // 
-// Version 0.1.1
+// Version 0.1.2
 // Full source at https://github.com/fetch/countdown
 // Copyright (c) 2012 Fetch! http://www.fetch.nl
 

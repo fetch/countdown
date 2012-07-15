@@ -123,8 +123,9 @@ $('.countdown').countdown();
 &lt;script&gt;
 $('.countdown').countdown({
     digits: 20,
-    duration: 2000000
-}).countdown('animateTo', 1000000);
+    duration: 2000000,
+    animateTo: 1000000
+});
 &lt;/script&gt;
 </pre>
 		</div>
@@ -248,7 +249,7 @@ $('.countdown').countdown().on('countdown:finished', function(event, data){
 				$(_this).countdown('animateTo', data.old_value);
 			}, 1000);
 		});
-		
+		$('.countdown').countdown();
 		prettyPrint();
 	});
 	</script>
