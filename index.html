@@ -18,7 +18,7 @@
 	<div class="wrapper">
 		  <header>
 			<h1 class="header">Countdown</h1>
-			<p class="header">Countdown is a JavaScript plugin to easily create counters.</p>
+			<p class="header">Countdown is a JavaScript plugin to easily create countdowns and counters.</p>
 
 			<ul>
 				<li class="download"><a class="buttons" href="https://github.com/fetchhq/countdown/zipball/master">Download ZIP</a></li>
@@ -38,6 +38,33 @@
 				<li>Prototype support: Not yet</li>
 			</ul>
 			<p>For documentation, usage, and examples, see:<br><a href="http://github.com/fetchhq/countdown">http://github.com/fetchhq/countdown</a></p>
+
+			<h2></h2>
+			<h2>Autostarting Countdowns</h2>
+			<div class=" clearfix">
+				<p>Countdowns can be any size. Options can be set through data-attributes or by an options object passed to the constructor.</p>
+				<div>
+					<div class="countdown" id="countdown-1" data-digits="20" data-duration="2000000" data-animate-to="1000000"></div>
+					<p><strong>With data-attributes:</strong></p>
+					<pre class="prettyprint">
+					&lt;div class="countdown" data-digits="20" data-duration="2000000" data-animate-to="1000000"&gt;&lt;/div&gt;
+
+					&lt;script&gt;
+					$('.countdown').countdown();
+					&lt;/script&gt;
+					</pre>
+					<p><strong>With object in constructor:</strong></p>
+					{% highlight html %}
+					<div class="countdown"></div>
+					<script>
+					$('.countdown').countdown({
+					    digits: 20,
+					    duration: 2000000
+					}).countdown('animateTo', 1000000);
+					</script>
+					{% endhighlight %}
+				</div>
+			</div>
 
 			<h3>Using CoffeeScript &amp; Cake</h3>
 
