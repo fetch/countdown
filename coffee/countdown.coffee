@@ -1,11 +1,11 @@
 $.fn.extend 
-  counter: (options, args...) ->
+  countdown: (options, args...) ->
     this.each ->
-      counter = $(this).data 'counter'
-      if counter
-        counter[options].apply(counter, args) if counter[options]
+      countdown = $(this).data 'countdown'
+      if countdown
+        countdown[options].apply(countdown, args) if countdown[options]
       else
-        $(this).data 'counter', new Countdown( this, options )
+        $(this).data 'countdown', new Countdown( this, options )
 
 class Countdown
   
@@ -53,7 +53,7 @@ class Countdown
       this.setValue Math.round( @options.easing(null, time, @oldValue, difference, duration) )
       if time < @options.duration
         return @timeout = setTimeout animationStep, 10 - timeDifference
-      @jq_elem.trigger 'counter:finished', {old_value: @oldValue, value: @value}
+      @jq_elem.trigger 'countdown:finished', {old_value: @oldValue, value: @value}
     
     clearTimeout @timeout if @timeout
     @timeout = setTimeout animationStep, 10
@@ -61,7 +61,7 @@ class Countdown
   stop: ->
     if @timeout
       clearTimeout @timeout
-      @jq_elem.trigger 'counter:stopped', {old_value: @oldValue, value: @value}
+      @jq_elem.trigger 'countdown:stopped', {old_value: @oldValue, value: @value}
       delete @timeout
   
   setValue: (value) ->

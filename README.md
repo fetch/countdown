@@ -6,7 +6,7 @@ Countdown is a JavaScript plugin to easily create countdowns and counters.
 - Prototype support: Not yet
 
 For documentation, usage, and examples, see:  
-http://github.com/fetchhq/countdown
+http://github.com/fetch/countdown
 
 ### Using CoffeeScript & Cake
 

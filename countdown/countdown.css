@@ -1,4 +1,4 @@
-.counter{
+.countdown{
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -9,7 +9,7 @@
   height: 43px;
 }
 
-.counter .digit{
+.countdown .digit{
   font-size: 28px;
   text-align: center;
   line-height: 45px;
