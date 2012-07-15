@@ -1,74 +1,72 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Countdown by fetchhq</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<title>Countdown by Fetch!</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Countdown</h1>
-        <p class="header">Countdown is a JavaScript plugin to easily create counters.</p>
+	<link rel="stylesheet" href="stylesheets/styles.css">
+	<link rel="stylesheet" href="stylesheets/countdown.css">
+	<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+	<script src="javascripts/scale.fix.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="wrapper">
+		  <header>
+			<h1 class="header">Countdown</h1>
+			<p class="header">Countdown is a JavaScript plugin to easily create counters.</p>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/fetchhq/countdown/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/fetchhq/countdown/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/fetchhq/countdown">View On GitHub</a></li>
-        </ul>
+			<ul>
+				<li class="download"><a class="buttons" href="https://github.com/fetchhq/countdown/zipball/master">Download ZIP</a></li>
+				<li class="download"><a class="buttons" href="https://github.com/fetchhq/countdown/tarball/master">Download TAR</a></li>
+				<li><a class="buttons github" href="https://github.com/fetchhq/countdown">View On GitHub</a></li>
+			</ul>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/fetchhq">fetchhq</a></p>
+			<p class="header">This project is maintained by <a class="header name" href="https://github.com/fetchhq">fetchhq</a></p>
+		</header>
+		<section>
+			<h1>Countdown</h1>
 
+			<p>Countdown is a JavaScript plugin to easily create countdowns and counters.</p>
 
-      </header>
-      <section>
-        <h1>Countdown</h1>
+			<ul>
+				<li>jQuery support: 1.6+ (will see if i can downgrade it a bit.)</li>
+				<li>Prototype support: Not yet</li>
+			</ul>
+			<p>For documentation, usage, and examples, see:<br><a href="http://github.com/fetchhq/countdown">http://github.com/fetchhq/countdown</a></p>
 
-<p>Countdown is a JavaScript plugin to easily create countdowns and counters.</p>
+			<h3>Using CoffeeScript &amp; Cake</h3>
 
-<ul>
-<li>jQuery support: 1.6+ (will see if i can downgrade it a bit.)</li>
-<li>Prototype support: Not yet</li>
-</ul><p>For documentation, usage, and examples, see:<br><a href="http://github.com/fetchhq/countdown">http://github.com/fetchhq/countdown</a></p>
+			<p>First, make sure you have the proper CoffeeScript / Cake set-up in place. We have added a package.json that makes this easy:</p>
 
-<h3>Using CoffeeScript &amp; Cake</h3>
+			<pre><code>npm install -d</code></pre>
 
-<p>First, make sure you have the proper CoffeeScript / Cake set-up in place. We have added a package.json that makes this easy:</p>
+			<p>This will install <code>coffee-script</code> and <code>uglifyjs</code>.</p>
 
-<pre><code>npm install -d
-</code></pre>
+			<p>Once you're configured, building the JavasScript from the command line is easy:</p>
 
-<p>This will install <code>coffee-script</code> and <code>uglifyjs</code>.</p>
+			<pre><code>cake build				 # build Countdown from source
+			cake watch				  # watch coffee/ for changes and build Countdown
+			</code></pre>
 
-<p>Once you're configured, building the JavasScript from the command line is easy:</p>
+			<p>If you're interested, you can find the recipes in Cakefile.</p>
 
-<pre><code>cake build                # build Countdown from source
-cake watch                # watch coffee/ for changes and build Countdown
-</code></pre>
+			<h3>Countdown Credits</h3>
 
-<p>If you're interested, you can find the recipes in Cakefile.</p>
-
-<h3>Countdown Credits</h3>
-
-<ul>
-<li>Built by <a href="http://www.fetch.nl/">Fetch!</a>. </li>
-<li>Concept and development by <a href="http://koen.pt/">Koen Punt</a>
-</li>
-</ul>
-      </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
-      </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+			<ul>
+				<li>Built by <a href="http://www.fetch.nl/">Fetch!</a>. </li>
+				<li>Concept and development by <a href="http://koen.pt/">Koen Punt</a></li>
+			</ul>
+		</section>
+		<footer>
+			<p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+		</footer>
+	</div>
+	<!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
 		
-  </body>
+</body>
 </html>
