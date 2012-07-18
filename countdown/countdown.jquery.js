@@ -35,6 +35,8 @@
       placeholder: '-',
       duration: 1000,
       digits: 8,
+      min: null,
+      max: null,
       easing: function(x, t, b, c, d) {
         return c * t / d + b;
       }
@@ -78,6 +80,22 @@
       } else {
         this.targetValue = value;
       }
+      if ((this.options.max != null) && this.targetValue > this.options.max) {
+        this.jq_elem.trigger('countdown:limit', {
+          value: this.targetValue,
+          limit: 'max',
+          limited_to: this.options.max
+        });
+        this.targetValue = this.options.max;
+      }
+      if ((this.options.min != null) && this.targetValue < this.options.min) {
+        this.jq_elem.trigger('countdown:limit', {
+          value: this.targetValue,
+          limit: 'min',
+          limited_to: this.options.min
+        });
+        this.targetValue = this.options.min;
+      }
       difference = this.targetValue - this.value;
       duration = this.options.duration;
       this.oldValue = this.value;
@@ -112,11 +130,9 @@
     };
 
     Countdown.prototype.setValue = function(value) {
-      var pad,
-        _this = this;
+      var _this = this;
       this.value = value;
-      pad = '0';
-      value = value.toString().lpad(pad, this.options.digits).split('');
+      value = value.toString().lpad('0', this.options.digits).split('');
       return $('.digit', this.jq_elem).each(function(index, digit) {
         return $(digit).text(value[index]);
       });

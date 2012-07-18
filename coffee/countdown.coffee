@@ -13,6 +13,8 @@ class Countdown
     placeholder: '-'
     duration: 1000
     digits: 8
+    min: null
+    max: null
     easing: (x, t, b, c, d) ->
       # Default linear interpolation
       c*t/d + b;
@@ -43,6 +45,15 @@ class Countdown
       @targetValue = (@targetValue || 0) + eval(value)
     else 
       @targetValue = value
+    
+    if @options.max? and @targetValue > @options.max
+      @jq_elem.trigger 'countdown:limit', {value: @targetValue, limit: 'max', limited_to: @options.max}
+      @targetValue = @options.max
+    
+    if @options.min? and @targetValue < @options.min
+      @jq_elem.trigger 'countdown:limit', {value: @targetValue, limit: 'min', limited_to: @options.min}
+      @targetValue = @options.min
+    
     difference = @targetValue - @value
     duration = @options.duration
     @oldValue = @value
@@ -66,8 +77,7 @@ class Countdown
   
   setValue: (value) ->
     @value = value 
-    pad = '0' # if value > 0 then '0' else @options.placeholder
-    value = value.toString().lpad(pad, @options.digits).split('')
+    value = value.toString().lpad('0', @options.digits).split('')
     $('.digit', @jq_elem).each (index, digit) =>
       $(digit).text value[index]
   
