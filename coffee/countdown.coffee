@@ -42,7 +42,10 @@ class Countdown
     startTime = new Date().getTime()
     time = 0
     if typeof value == 'string'
-      @targetValue = (@targetValue || 0) + eval(value)
+      if /^\d+$/.test(value)
+        @targetValue = value
+      else
+        @targetValue = (@targetValue || 0) + eval(value)
     else 
       @targetValue = value
     

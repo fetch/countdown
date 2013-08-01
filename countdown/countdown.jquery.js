@@ -76,7 +76,11 @@
       startTime = new Date().getTime();
       time = 0;
       if (typeof value === 'string') {
-        this.targetValue = (this.targetValue || 0) + eval(value);
+        if (/^\d+$/.test(value)) {
+          this.targetValue = value;
+        } else {
+          this.targetValue = (this.targetValue || 0) + eval(value);
+        }
       } else {
         this.targetValue = value;
       }
