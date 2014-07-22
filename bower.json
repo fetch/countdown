@@ -1,0 +1,28 @@
+{
+  "name": "jquery-countdown",
+  "version": "0.1.4",
+  "homepage": "https://github.com/fetch/countdown",
+  "authors": [
+    "Koen Punt <koen@fetch.nl>"
+  ],
+  "description": "Countdown is a JavaScript plugin to easily create countdowns and counters. It is currently only available for jQuery.",
+  "main": [
+    "build/jquery.countdown.js",
+    "build/jquery.countdown.css"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "countdown",
+    "counter"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
