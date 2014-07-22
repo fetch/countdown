@@ -1,0 +1,30 @@
+.countdown{
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+  height: 43px;
+}
+
+.countdown .digit{
+  font-size: 28px;
+  text-align: center;
+  line-height: 43px;
+  float: left;
+  display: block;
+  height: 43px;
+  width: 32px;
+  margin-right: 1px;
+  color: #FFF;
+  background: #222; /* Old browsers */
+  background: -moz-linear-gradient(top,  #4c4c4c 0%, #2c2c2c 50%, #000000 51%, #131313 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(50%,#2c2c2c), color-stop(51%,#000000), color-stop(100%,#131313)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #4c4c4c 0%,#2c2c2c 50%,#000000 51%,#131313 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #4c4c4c 0%,#2c2c2c 50%,#000000 51%,#131313 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #4c4c4c 0%,#2c2c2c 50%,#000000 51%,#131313 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #4c4c4c 0%,#2c2c2c 50%,#000000 51%,#131313 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+}
